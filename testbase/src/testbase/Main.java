@@ -1,5 +1,8 @@
 package testbase;
 
+import java.io.File;
+import java.io.FileFilter;
+
 import sq.thread.TestThread;
 
 public class Main {
@@ -10,5 +13,17 @@ public class Main {
 			arrthread[i] = new TestThread(i);
 			arrthread[i].start();
 		}
+		
+	}
+	
+	public boolean TestInterFace(File file) {
+		FileFilter ff = new FileFilter() {
+			@Override
+			public boolean accept(File pathname) {
+				// TODO Auto-generated method stub
+				return pathname.isDirectory() || pathname.getName().endsWith(".dealling");
+			}
+		};
+		return ff.accept(file);		
 	}
 }
