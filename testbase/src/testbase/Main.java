@@ -7,50 +7,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 
+import sq.base.TestFiles;
 import sq.thread.*;
 
 public class Main {
 
-	static boolean bIsDealing(File file) {
-		FileFilter ff = new FileFilter() {
-			@Override
-			public boolean accept(File pathname) {
-				// TODO Auto-generated method stub
-				return pathname.isDirectory() || pathname.getName().endsWith(".dealling");
-			}
-		};
-		return ff.accept(file);
-	}
-	
-	static void TestFile() {
-	//	String strFilename = "/home/sq/workspace_ee/世界各国IP段.txt";
-	//	String strFilename = "/home/sdzw/eclipse-workspace/世界各国IP段.txt";
-		String strFilename = "/home/sdzw/eclipse-workspace/aa.dealling";
-		File file = new File(strFilename);
-		if (bIsDealing(file))
-		{
-			System.out.println("file is dealing filename:" + file.getName());
-		}
-		else
-		{
-			System.out.println("file " + file.getName() + " is not dealing");
-		}
-		BufferedReader read = null;
-		try {
-			read = new BufferedReader(new FileReader(file));
-			String strLine = null;
-			int i = 0;
-			while ((strLine = read.readLine()) != null) {
-				System.out.println(strLine);
-				i ++;
-				if (i > 10)
-					break;
-			}
-		} catch (IOException e) {
-			System.out.println("open file error " + strFilename);
-		}
-	}
-	
+
 	/**
 	 * 多线程，继承thread类
 	 */
@@ -64,7 +26,6 @@ public class Main {
 		}
 		
 	}
-
 	
 	/**
 	 * 继承接口 runnable 适合于多个相同线程处理同一资源的情况
@@ -77,9 +38,10 @@ public class Main {
 		t1.start();
 	}
 	
-	public static void main(String []args) {
-		TestThread1();
-		//TestFile();
+	public static void main(String []args) throws IOException {
+		TestFiles.TestFile1();
+		TestFiles.TestFile2();
+		//TestThread1();
 		//TestThread2();
 	}
 	
