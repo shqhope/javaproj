@@ -1,11 +1,6 @@
 package testbase;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileFilter;
-import java.io.FileReader;
 import java.io.IOException;
-import java.lang.annotation.Documented;
 
 import sq.base.TestFiles;
 import sq.thread.*;
@@ -39,8 +34,9 @@ public class Main {
 	}
 	
 	public static void main(String []args) throws IOException {
-		TestFiles.TestFile1();
-		TestFiles.TestFile2();
+		//TestFiles.TestFile1();
+		//TestFiles.TestFile2();
+		TestFiles.TestFile9();
 		//TestThread1();
 		//TestThread2();
 	}
