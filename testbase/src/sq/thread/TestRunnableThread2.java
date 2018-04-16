@@ -1,6 +1,6 @@
 package sq.thread;
 
-public class TestThread2 implements Runnable {
+public class TestRunnableThread2 implements Runnable {
 	private int m_iCounter;
 	@Override
 	public synchronized void run() {

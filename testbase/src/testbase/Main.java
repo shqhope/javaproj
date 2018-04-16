@@ -26,7 +26,7 @@ public class Main {
 	 * 继承接口 runnable 适合于多个相同线程处理同一资源的情况
 	 */
 	static void TestThread2() {
-		TestThread2 thread2 = new TestThread2();
+		TestRunnableThread2 thread2 = new TestRunnableThread2();
 		Thread t2 = new Thread(thread2, "t2");
 		Thread t1 = new Thread(thread2, "t1");
 		t2.start();
